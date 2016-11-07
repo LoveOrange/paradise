@@ -1,0 +1,27 @@
+base:
+  host: http://agile.baidu.com
+
+# api test
+# eg.
+# - $test_name
+#     api: $test_api
+#     method: get | post
+#     params:
+#       - $param_name: $param_value
+#     expect:
+#       equals: $expect_return_value
+api_test:
+  - is_git:
+      api: /api/agile/isGitModule
+      method: get
+      params:
+        module: appdemo/qa-code/lcmoon
+      expect:
+        equals: "false"
+  - haishi_git:
+      api: /api/agile/isGitModule
+      method: get
+      params:
+        module: appdemo/qa-code/lcmoon
+      expect:
+        equals: "false"
