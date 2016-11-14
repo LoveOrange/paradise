@@ -1,6 +1,13 @@
 base:
   host: http://agile.baidu.com
 
+action:
+  before:
+    scripts:
+      - "sh shell/ci.sh"
+      - "echo fuck world"
+    dom_actions:
+
 # api test
 # eg.
 # - $test_name
@@ -25,3 +32,9 @@ api_test:
         module: appdemo/qa-code/lcmoon
       expect:
         equals: "false"
+
+dom_test:
+  - main_view:
+      dom: .module_name
+      expect:
+        value: "appdemo/qa-code/lcmoon"
