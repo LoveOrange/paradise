@@ -1,6 +1,7 @@
 #!/usr/bin/python
 # -*- coding:utf-8 -*-
 
+<<<<<<< HEAD
 import sys
 import subprocess
 
@@ -16,3 +17,6 @@ class Command(object):
         if not 0 == process.wait():
             print 'Error with current command: [%s]' % self.command
             sys.exit(-1)
+=======
+
+>>>>>>> cf8b2dd254b3e95ae4f3655d7120b40a8bcd8fb8

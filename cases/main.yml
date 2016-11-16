@@ -1,9 +1,18 @@
 base:
   host: http://agile.baidu.com
 
+<<<<<<< HEAD
 before:
   command:
     - "touch helloworld"
+=======
+action:
+  before:
+    scripts:
+      - "sh shell/ci.sh"
+      - "echo fuck world"
+    dom_actions:
+>>>>>>> cf8b2dd254b3e95ae4f3655d7120b40a8bcd8fb8
 
 # api test
 # eg.
@@ -29,3 +38,9 @@ api_test:
         module: appdemo/qa-code/lcmoon
       expect:
         equals: "false"
+
+dom_test:
+  - main_view:
+      dom: .module_name
+      expect:
+        value: "appdemo/qa-code/lcmoon"
