@@ -4,6 +4,7 @@
 import yaml
 
 BASE = "base"
+BEFORE = "before"
 CASES_PATH = "cases/main.yml"
 API_TEST = "api_test"
 
@@ -29,5 +30,12 @@ class CaseHandler(object):
     def return_api_cases(self):
         if API_TEST in self._all_config:
             return self._all_config[API_TEST]
+
+    def return_before_scripts(self):
+        if BEFORE in self._all_config:
+            before_action = self._all_config[BEFORE]
+        if before_action and "command" in before_action:
+            return before_action["command"]
+        return []
 
 

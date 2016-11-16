@@ -1,6 +1,10 @@
 base:
   host: http://agile.baidu.com
 
+before:
+  command:
+    - "touch helloworld"
+
 # api test
 # eg.
 # - $test_name

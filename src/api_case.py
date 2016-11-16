@@ -37,7 +37,7 @@ class ApiCase(object):
         url = self.host + self.api
         data = urllib.urlencode(self.params)
         request = urllib2.Request(url, data)
-        response = urllib2.urlopen(request)
+        response = urllib2.urlopen(request, timeout=3)
         return self._parse_value(response.read())
 
     def _parse_value(self, real_value):
