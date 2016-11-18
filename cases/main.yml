@@ -1,6 +1,13 @@
 base:
   host: http://agile.baidu.com
 
+# before action
+# eg.
+# before:
+#   command:
+#     - ${cmd}
+#   browser:
+#     - ${action}: ${dom}
 before:
   command:
     - "touch helloworld"
@@ -30,7 +37,13 @@ api_test:
       expect:
         equals: "false"
 
-dom_test:
+# browser test
+# eg.
+# - ${case_name}
+#     dom: ${dom_name}
+#     expect:
+#       value: ${expect_value}
+browser_test:
   - main_view:
       dom: .module_name
       expect:
