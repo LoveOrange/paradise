@@ -1,0 +1,6 @@
+- base_show:
+    actions:
+      - click: "title"
+    validate: "title"
+    expect:
+      - equals: "hello world"

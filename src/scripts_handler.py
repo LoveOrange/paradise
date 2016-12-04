@@ -13,4 +13,3 @@ class ScriptsHandler(object):
         for _script in self.scripts:
             script = ScriptAction(_script)
             script.run()
-

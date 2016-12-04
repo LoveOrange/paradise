@@ -15,5 +15,3 @@ class ScriptAction(object):
     def run(self):
         command = Command(self.command)
         return command.run()
-
-

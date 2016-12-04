@@ -1,41 +1,34 @@
 #!/usr/bin/python
 #  -*- coding: utf-8 -*-
 
-import yaml
+from api_case_handler import ApiCaseHandler
+from dom_case_handler import DomCaseHandler
 
-BASE = "base"
-BEFORE = "before"
-CASES_PATH = "cases/main.yml"
-API_TEST = "api_test"
+
+def case_log_start():
+    print "start load cases..."
+
+
+def case_log_end():
+    print "complete load cases"
 
 
 class CaseHandler(object):
     """
     Case Handler
-    read cases from .yml
+    read cases from *.yml
     """
-    def __init__(self):
-        self._case_yml_path = CASES_PATH
-        self._all_config = {}
+    def __init__(self, config):
+        self.config = config
+        self._cases = []
 
-        self._read_yml()
-
-    def _read_yml(self):
-        with open(self._case_yml_path, 'r') as cases_yml:
-            self._all_config = yaml.load(cases_yml)
-
-    def return_base_config(self):
-        return self._all_config[BASE]
-
-    def return_api_cases(self):
-        if API_TEST in self._all_config:
-            return self._all_config[API_TEST]
-
-    def return_before_scripts(self):
-        if BEFORE in self._all_config:
-            before_action = self._all_config[BEFORE]
-        if before_action and "command" in before_action:
-            return before_action["command"]
-        return []
-
-
+    def load_cases(self):
+        case_log_start()
+        for case_file in self.config.case_files:
+            # todo 优化
+            if "api" in case_file:
+                self._cases.append(ApiCaseHandler(case_file["api"], self.config).load_cases())
+            elif "dom" in case_file:
+                self._cases.append(DomCaseHandler(case_file["dom"], self.config).load_cases())
+        case_log_end()
+        return self._cases

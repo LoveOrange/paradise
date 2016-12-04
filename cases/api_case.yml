@@ -1,9 +1,0 @@
-profile: api
-
-isGitModule:
-  api: /api/agile/isGitModule
-  method: get
-  params:
-    module: appdemo/qa-code/lcmoon
-  expect:
-    equals: true

@@ -1,0 +1,9 @@
+host: http://localhost:8080
+
+selenium:
+  path: "paradise"
+
+case_files:
+  - api: "cases/api.yml"
+  - dom: "cases/dom.yml"
+#  - api: "cases/api2.yml"
