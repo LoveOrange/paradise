@@ -29,7 +29,7 @@ class DomCase(Case):
     """
 
     def __init__(self, case):
-        super(DomCase, self).__init__("DOM", case)
+        super(DomCase, self).__init__("dom", case)
         self._actions = get_actions(case)
         self._validate = get_validate(case)
         self._expect = get_expect(case)

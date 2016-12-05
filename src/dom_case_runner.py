@@ -4,10 +4,10 @@
 from case_runner import CaseRunner
 
 
-class ApiCaseRunner(CaseRunner):
+class DomCaseRunner(CaseRunner):
 
     def __init__(self, case):
-        super(ApiCaseRunner, self).__init__(case)
+        super(DomCaseRunner, self).__init__(case)
 
     def run(self):
-        print "api case is running..."
+        print "dom case is running..."

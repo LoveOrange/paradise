@@ -1,9 +1,13 @@
 #!/usr/bin/python
 # -*- coding:utf-8 -*-
 
-from abc import abstractmethod
+from api_case_runner import ApiCaseRunner
+from dom_case_runner import DomCaseRunner
 
+_API_CASE_RUNNER = ApiCaseRunner
+_DOM_CASE_RUNNER = DomCaseRunner
 
-def get_runner(case_type):
-    if case_type == "API":
-        return
+RUNNER_FACTORY = {
+    "api": _API_CASE_RUNNER,
+    "dom": _DOM_CASE_RUNNER
+}

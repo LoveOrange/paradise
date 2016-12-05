@@ -10,6 +10,3 @@ class Case(object):
     def __init__(self, _type, case):
         self.type = _type
         self.case = case
-
-    def __str__(self):
-        return self.case

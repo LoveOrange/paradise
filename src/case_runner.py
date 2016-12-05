@@ -8,8 +8,8 @@ class CaseRunner(object):
     Abstract CaseRunner
     """
 
-    def __init__(self, cases):
-        self.cases = cases
+    def __init__(self, case):
+        self.case = case
 
     @abstractmethod
     def run(self):

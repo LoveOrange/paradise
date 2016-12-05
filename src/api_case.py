@@ -11,5 +11,5 @@ class ApiCase(Case):
 
     def __init__(self, case):
         # todo api test功能与 pyresttest 相似，暂时先做dom
-        super(ApiCase, self).__init__("API", case)
+        super(ApiCase, self).__init__("api", case)
         pass
