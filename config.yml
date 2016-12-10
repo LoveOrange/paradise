@@ -2,6 +2,7 @@ host: http://localhost:8080
 
 selenium:
   path: "paradise"
+  driver:
 
 case_files:
   - api: "cases/api.yml"

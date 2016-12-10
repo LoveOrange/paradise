@@ -9,4 +9,7 @@ class Case(object):
 
     def __init__(self, _type, case):
         self.type = _type
-        self.case = case
+        for k in case.keys():
+            self.case_name = k
+            self.case_body = case[k]
+            break

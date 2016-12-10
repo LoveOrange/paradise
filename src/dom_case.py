@@ -1,6 +1,7 @@
 #!/usr/bin/python
 # -*- coding:utf-8 -*-
 
+import sys
 from case import Case
 from action import Action
 
@@ -30,6 +31,12 @@ class DomCase(Case):
 
     def __init__(self, case):
         super(DomCase, self).__init__("dom", case)
-        self._actions = get_actions(case)
-        self._validate = get_validate(case)
-        self._expect = get_expect(case)
+        self._actions = get_actions(self.case_body)
+        self._validate = get_validate(self.case_body)
+        self._expect = get_expect(self.case_body)
+        self.check_dom_correct()
+
+    def check_dom_correct(self):
+        if not self._validate:
+            print "[Error] None validate dom, return -1"
+            sys.exit(-1)
