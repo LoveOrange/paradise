@@ -1,6 +1,7 @@
 - base_show:
     actions:
       - click: "title"
+      - fill: "title(value)"
     validate: "title"
     expect:
       - equals: "hello world"

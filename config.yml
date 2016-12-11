@@ -1,8 +1,7 @@
-host: http://localhost:8080
+host: https://baidu.com
 
 selenium:
-  path: "paradise"
-  driver:
+    type: chrome
 
 case_files:
   - api: "cases/api.yml"

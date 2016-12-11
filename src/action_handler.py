@@ -1,19 +1,30 @@
 #!/usr/bin/python
 # -*- coding:utf-8 -*-
 
+from command_handler import Command
+from selenium_utils import get_browser
 
-class ActionHandler(object):
 
-    def __init__(self, action_config):
-        self._action_config = action_config
+def click(dom):
+    """
+    click specific dom
+    :param dom:
+    :return:
+    """
+    get_browser().click(dom)
 
-    def run_before(self):
-        before_action = self._parse_before_action()
-        if before_action:
-            if "scripts" in before_action:
-                pass
 
-    def _parse_before_action(self):
-        if "before" in self._action_config:
-            return self._action_config["before"]
-        return None
+def run_command(_command):
+    """
+    run shell command
+    :param _command:
+    :return:
+    """
+    command = Command(_command)
+    command.run()
+
+
+def fill(dom=None, value=None):
+    print 'fill dom %s with value %s' % (dom, value)
+    get_browser().fill("s_ipt", 'LoveOrange')
+    pass

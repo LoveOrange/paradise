@@ -1,31 +1,13 @@
 #!/usr/bin/python
 # -*- coding:utf-8 -*-
 
-from command_handler import Command
-
-
-def click(dom):
-    """
-    click specific dom
-    :param dom:
-    :return:
-    """
-    pass
-
-
-def run_command(_command):
-    """
-    run shell command
-    :param _command:
-    :return:
-    """
-    command = Command(_command)
-    command.run()
+from action_handler import *
 
 
 ACTION = {
     "click": click,
-    "scripts": run_command
+    "scripts": run_command,
+    "fill": fill
 }
 
 
