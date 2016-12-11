@@ -10,4 +10,4 @@ class ApiCaseRunner(CaseRunner):
         super(ApiCaseRunner, self).__init__(case)
 
     def run(self):
-        print "api case is running..."
+        return "ok"

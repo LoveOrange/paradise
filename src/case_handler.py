@@ -10,7 +10,7 @@ def case_log_start():
 
 
 def case_log_end():
-    print "loading cases complete"
+    print "loading cases complete.\n"
 
 
 class CaseHandler(object):

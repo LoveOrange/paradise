@@ -10,7 +10,7 @@ def click(dom):
     :param dom:
     :return:
     """
-    print "click " + dom
+    pass
 
 
 def run_command(_command):
@@ -29,15 +29,14 @@ ACTION = {
 }
 
 
-def get_action(action):
+def _get_action(action):
     for k, v in action.items():
         return k, v
 
 
 class Action(object):
-
     def __init__(self, action):
-        self._action_type, self._action_value = get_action(action)
+        self._action_type, self._action_value = _get_action(action)
 
     def run(self):
         ACTION[self._action_type](self._action_value)
