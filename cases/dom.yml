@@ -1,4 +1,4 @@
-- base_show:
+- check_title:
     url: "https://baidu.com"
     actions:
       - fill: "s_ipt(LoveOrange)"
