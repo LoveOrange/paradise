@@ -1,7 +1,10 @@
 - base_show:
+    url: "https://baidu.com"
     actions:
-      - click: "title"
-      - fill: "title(value)"
+      - fill: "s_ipt(LoveOrange)"
+      - sleep: 1
+      - click: "s_btn"
+      - sleep: 1
     validate: "title"
     expect:
-      - equals: "hello world"
+      - equals: "LoveOrange_百度搜索"

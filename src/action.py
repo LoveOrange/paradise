@@ -7,7 +7,8 @@ from action_handler import *
 ACTION = {
     "click": click,
     "scripts": run_command,
-    "fill": fill
+    "fill": fill,
+    "sleep": sleep
 }
 
 

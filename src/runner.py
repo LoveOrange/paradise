@@ -17,6 +17,8 @@ def end_test_log():
         print "some cases are failed:"
         for case in FAILED_CASES:
             print "- %s" % case.case_name
+    else:
+        print "all cases passed"
 
 
 def start_test(cases):
