@@ -1,6 +1,7 @@
 - check_title:
     url: "https://baidu.com"
     actions:
+      - scripts: "sh shell/ci.sh"
       - fill: "s_ipt(LoveOrange)"
       - sleep: 1
       - click: "s_btn"
