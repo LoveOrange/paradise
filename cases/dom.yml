@@ -1,7 +1,11 @@
-- base_show:
+- check_title:
+    url: "https://baidu.com"
     actions:
-      - click: "title"
-      - fill: "title(value)"
+      - scripts: "sh shell/ci.sh"
+      - fill: ".s_ipt(LoveOrange)"
+      - sleep: 1
+      - click: ".s_btn"
+      - sleep: 1
     validate: "title"
     expect:
-      - equals: "hello world"
+      - equals: "LoveOrange_百度搜索"

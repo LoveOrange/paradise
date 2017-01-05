@@ -14,7 +14,7 @@ def get_actions(case):
     if "actions" not in case:
         return _actions
     for action in case["actions"]:
-        _actions.append(Action(action))
+        _actions.append(Action(action, case["url"]))
     return _actions
 
 

@@ -1,6 +1,7 @@
 #!/usr/bin/python
 # -*- coding:utf-8 -*-
 
+import sys
 from case_runner import FAILED_CASES
 from src.runner_factory import RUNNER_FACTORY
 
@@ -17,6 +18,9 @@ def end_test_log():
         print "some cases are failed:"
         for case in FAILED_CASES:
             print "- %s" % case.case_name
+        sys.exit(-1)
+    else:
+        print "all cases passed"
 
 
 def start_test(cases):

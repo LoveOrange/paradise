@@ -7,7 +7,8 @@ from action_handler import *
 ACTION = {
     "click": click,
     "scripts": run_command,
-    "fill": fill
+    "fill": fill,
+    "sleep": sleep
 }
 
 
@@ -17,8 +18,10 @@ def _get_action(action):
 
 
 class Action(object):
-    def __init__(self, action):
+    def __init__(self, action, url):
         self._action_type, self._action_value = _get_action(action)
+        self.url = url
 
     def run(self):
+        init(self.url)
         ACTION[self._action_type](self._action_value)

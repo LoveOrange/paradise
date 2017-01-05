@@ -7,19 +7,23 @@ from selenium import webdriver
 
 class SeleniumUtils(object):
 
-    def __init__(self):
+    def __init__(self, url):
         self._browser = webdriver.Chrome()
+        self.url = url
+        self._browser.get(url)
 
     def check_title(self, expect):
-        self._browser.get("https://github.com")
+        self._browser.get(self.url)
         return expect == self._browser.title
 
     def click(self, dom):
-        self._browser.get("https://baidu.com")
+        dom_element = Dom(dom)
+        real_dom = self.get_dom_element(dom_element)
+        real_dom.click()
 
     def fill(self, dom):
         dom_element = Dom(dom)
-        fill_value = dom.params
+        fill_value = dom_element.params
         _dom = self.get_dom_element(dom_element)
         _dom.send_keys(fill_value)
 
@@ -31,12 +35,18 @@ class SeleniumUtils(object):
         else:
             return self._browser.find_element_by_tag_name(dom.dom)
 
+    def get(self, dom):
+        real_dom = self._browser.find_element_by_class_name(dom)
+        return real_dom.text
+
+    def get_title(self):
+        return self._browser.title
 
 browser = None
 
 
-def get_browser():
+def get_browser(url):
     global browser
     if browser is None:
-        browser = SeleniumUtils()
+        browser = SeleniumUtils(url)
     return browser

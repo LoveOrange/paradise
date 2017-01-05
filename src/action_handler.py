@@ -1,8 +1,17 @@
 #!/usr/bin/python
 # -*- coding:utf-8 -*-
 
+import time
 from command_handler import Command
 from selenium_utils import get_browser
+
+
+url = None
+
+
+def init(case_url):
+    global url
+    url = case_url
 
 
 def click(dom):
@@ -11,7 +20,7 @@ def click(dom):
     :param dom:
     :return:
     """
-    get_browser().click(dom)
+    get_browser(url).click(dom)
 
 
 def run_command(_command):
@@ -24,7 +33,10 @@ def run_command(_command):
     command.run()
 
 
-def fill(dom=None, value=None):
-    print 'fill dom %s with value %s' % (dom, value)
-    get_browser().fill("s_ipt", 'LoveOrange')
+def fill(dom):
+    get_browser(url).fill(dom)
     pass
+
+
+def sleep(timeout):
+    time.sleep(timeout)
