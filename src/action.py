@@ -23,5 +23,4 @@ class Action(object):
         self.url = url
 
     def run(self):
-        init(self.url)
         ACTION[self._action_type](self._action_value)

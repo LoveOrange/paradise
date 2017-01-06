@@ -9,3 +9,17 @@
     validate: "title"
     expect:
       - equals: "LoveOrange_百度搜索"
+
+- login:
+    url: "http://agile.baidu.com"
+    actions:
+      - sleep: 2
+      # todo add a username
+      - fill: "#username()"
+      # todo add a password
+      - fill: "#password()"
+      - click: ".bt-login"
+      - sleep: 1
+    validate: "title"
+    expect:
+      - equals: "Agile 敏捷平台"

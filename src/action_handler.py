@@ -12,6 +12,7 @@ url = None
 def init(case_url):
     global url
     url = case_url
+    get_browser(url)
 
 
 def click(dom):

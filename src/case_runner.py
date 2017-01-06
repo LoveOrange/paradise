@@ -5,6 +5,7 @@ from abc import abstractmethod
 from action import Action
 from expect import Expect
 from expect_handler import validate
+from selenium_utils import get_browser
 
 FAILED_CASES = []
 
@@ -37,7 +38,12 @@ class CaseRunner(object):
             FAILED_CASES.append(self.case)
 
     def _run_actions(self):
+        if self.case.type == "dom":
+            browser = get_browser(self.case.case_body["url"])
+            browser.jump(self.case.case_body["url"])
         for action in self._actions:
+            # browser = get_browser(self.case.case_body["url"])
+            # browser.jump(self.case.case_body["url"])
             action.run()
 
     @abstractmethod
