@@ -10,7 +10,6 @@ class SeleniumUtils(object):
     def __init__(self, url):
         self._browser = webdriver.Chrome()
         self.url = url
-        print url
 
     def jump(self, url):
         self._browser.get(url)
@@ -39,7 +38,10 @@ class SeleniumUtils(object):
             return self._browser.find_element_by_tag_name(dom.dom)
 
     def get(self, dom):
-        real_dom = self.get_dom_element(dom)
+        dom_element = Dom(dom)
+        real_dom = self.get_dom_element(dom_element)
+        # print "parent %s" % real_dom.parent
+        # print "text %s" % real_dom.text
         return real_dom.text
 
     def get_title(self):

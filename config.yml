@@ -5,5 +5,7 @@ selenium:
 
 case_files:
   - api: "cases/api.yml"
-  - dom: "cases/dom.yml"
+#  - dom: "cases/dom.yml"
+  - dom: "cases/agile_login.yml"
+  - dom: "cases/agile.yml"
 #  - api: "cases/api2.yml"

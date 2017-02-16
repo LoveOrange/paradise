@@ -21,6 +21,7 @@ class DomCase(Case):
         self.check_dom_correct()
 
     def check_dom_correct(self):
-        if not self.validate:
-            print "[Error] None validate dom, return -1"
-            sys.exit(-1)
+        pass
+        # if not self.validate:
+        #     print "[Error] None validate dom, return -1"
+        #     sys.exit(-1)

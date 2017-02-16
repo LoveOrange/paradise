@@ -1,6 +1,7 @@
 #!/usr/bin/python
 # -*- coding:utf-8 -*-
 
+from time import sleep
 from abc import abstractmethod
 from action import Action
 from expect import Expect
@@ -45,6 +46,7 @@ class CaseRunner(object):
             # browser = get_browser(self.case.case_body["url"])
             # browser.jump(self.case.case_body["url"])
             action.run()
+        sleep(1)
 
     @abstractmethod
     def run(self):
