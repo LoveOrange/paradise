@@ -62,9 +62,9 @@ config.yml包含三种标签：
     url: /ok
     method: get
     headers:
-      - header1: header_value
+      header1: header_value
     params:
-      - param1: param_value
+      param1: param_value
     expect:
       - equals: "ok"
 ```

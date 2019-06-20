@@ -7,5 +7,4 @@
 *.iml
 out
 gen
-*/*.pyc
-将删除 .gitignore
+**/*.pyc

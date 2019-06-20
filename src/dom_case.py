@@ -2,7 +2,7 @@
 # -*- coding:utf-8 -*-
 
 import sys
-from case import Case
+from .case import Case
 
 
 def get_validate(case):

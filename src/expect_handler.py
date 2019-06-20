@@ -10,9 +10,14 @@ def _pass(expect, real):
     return True
 
 
+def _status_code(expect, real):
+    return expect == real.status_code
+
+
 EXPECT = {
     "equals": _equals,
-    "pass": _pass
+    "pass": _pass,
+    "status_code": _status_code
 }
 
 

@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding:utf-8 -*-
 
-from dom import Dom
+from .dom import Dom
 from selenium import webdriver
 
 
@@ -40,8 +40,6 @@ class SeleniumUtils(object):
     def get(self, dom):
         dom_element = Dom(dom)
         real_dom = self.get_dom_element(dom_element)
-        # print "parent %s" % real_dom.parent
-        # print "text %s" % real_dom.text
         return real_dom.text
 
     def get_title(self):

@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding:utf-8 -*-
 
-from command_handler import Command
+from .command_handler import Command
 
 SUCCESS = 0
 FAILURE = 1

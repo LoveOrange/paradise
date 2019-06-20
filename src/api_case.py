@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding:utf-8 -*-
 
-from case import Case
+from .case import Case
 
 
 class ApiCase(Case):

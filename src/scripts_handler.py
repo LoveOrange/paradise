@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding:utf-8 -*-
 
-from script_action import ScriptAction
+from .script_action import ScriptAction
 
 
 class ScriptsHandler(object):

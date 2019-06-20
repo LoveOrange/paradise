@@ -1,8 +1,8 @@
 #!/usr/bin/python
 # -*- coding:utf-8 -*-
 
-from case_runner import CaseRunner
-from selenium_utils import get_browser
+from .case_runner import CaseRunner
+from .selenium_utils import get_browser
 
 
 class DomCaseRunner(CaseRunner):

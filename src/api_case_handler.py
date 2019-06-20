@@ -3,7 +3,7 @@
 
 import sys
 import yaml
-from api_case import ApiCase
+from .api_case import ApiCase
 
 
 class ApiCaseHandler(object):
@@ -16,9 +16,9 @@ class ApiCaseHandler(object):
     def load_cases(self):
         try:
             with open(self._case_file) as _case_file:
-                case_files = yaml.safe_load(_case_file)
+                case_files = yaml.load(_case_file, Loader=yaml.CLoader)
         except IOError:
-            print "[Error] case file not exists: %s" % self._case_file
+            print("[Error] case file not exists: %s" % self._case_file)
             sys.exit(-1)
         for case in case_files:
             self._api_cases.append(ApiCase(case))

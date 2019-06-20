@@ -14,5 +14,5 @@ class Command(object):
         process = subprocess.Popen(self.command, shell=True,
                                    stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         if not 0 == process.wait():
-            print 'Error with current command: [%s]' % self.command
+            print('Error with current command: [%s]' % self.command)
             sys.exit(-1)

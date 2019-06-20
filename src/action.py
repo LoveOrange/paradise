@@ -1,8 +1,7 @@
 #!/usr/bin/python
 # -*- coding:utf-8 -*-
 
-from action_handler import *
-
+from .action_handler import *
 
 ACTION = {
     "click": click,

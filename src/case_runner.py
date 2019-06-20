@@ -3,10 +3,10 @@
 
 from time import sleep
 from abc import abstractmethod
-from action import Action
-from expect import Expect
-from expect_handler import validate
-from selenium_utils import get_browser
+from .action import Action
+from .expect import Expect
+from .expect_handler import validate
+from .selenium_utils import get_browser
 
 FAILED_CASES = []
 
@@ -31,7 +31,7 @@ class CaseRunner(object):
         self._run()
 
     def _run(self):
-        print '- %s' % self.case.case_name
+        print('- %s' % self.case.case_name)
         self._run_actions()
         _validate = self.run()
         _expect = Expect(self.case.expect, _validate)

@@ -1,16 +1,16 @@
 #!/usr/bin/python
 #  -*- coding: utf-8 -*-
 
-from api_case_handler import ApiCaseHandler
-from dom_case_handler import DomCaseHandler
+from .api_case_handler import ApiCaseHandler
+from .dom_case_handler import DomCaseHandler
 
 
 def case_log_start():
-    print "start loading cases..."
+    print("start loading cases...")
 
 
 def case_log_end():
-    print "loading cases complete.\n"
+    print("loading cases complete.\n")
 
 
 class CaseHandler(object):

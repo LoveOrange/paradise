@@ -1,0 +1,26 @@
+- check_status:
+    url: http://localhost:8080/status
+    method: get
+    headers:
+      header1: header_value
+      header2: header_value
+    params:
+      param1: param_value
+    expect:
+      - status_code: 200
+
+- check_status:
+    url: http://localhost:8080/status
+    method: get
+    headers:
+    params:
+    expect:
+      - status_code: 200
+
+- check_status:
+    url: http://localhost:8080/status
+    method: get
+    headers:
+    params:
+    expect:
+      - status_code: 200

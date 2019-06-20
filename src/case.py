@@ -1,7 +1,6 @@
 #!/usr/bin/python
 # -*- coding:utf-8 -*-
 
-
 def get_expect(case):
     if "expect" in case:
         return case["expect"]

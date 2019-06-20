@@ -2,8 +2,8 @@
 # -*- coding:utf-8 -*-
 
 import time
-from command_handler import Command
-from selenium_utils import get_browser
+from .command_handler import Command
+from .selenium_utils import get_browser
 
 
 url = None

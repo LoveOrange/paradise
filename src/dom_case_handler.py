@@ -3,7 +3,7 @@
 
 import yaml
 import sys
-from dom_case import DomCase
+from .dom_case import DomCase
 
 
 class DomCaseHandler(object):
@@ -19,7 +19,7 @@ class DomCaseHandler(object):
             with open(self._case_file) as _case_file:
                 case_files = yaml.safe_load(_case_file)
         except IOError:
-            print "[Error] case file not exists: %s" % self._case_file
+            print("[Error] case file not exists: %s" % self._case_file)
             sys.exit(-1)
         for case in case_files:
             self._api_cases.append(DomCase(case))
