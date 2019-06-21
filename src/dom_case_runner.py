@@ -11,6 +11,7 @@ class DomCaseRunner(CaseRunner):
         super(DomCaseRunner, self).__init__(case)
 
     def run(self):
+        # TODO use a common way to check dom elements
         if "title" == self.case.validate:
             return get_browser(self.case.case_body["url"]).get_title()
         else:

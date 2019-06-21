@@ -1,6 +1,7 @@
 #!/usr/bin/python
 # -*- coding:utf-8 -*-
 
+import json
 import requests
 from .case_runner import CaseRunner
 
@@ -14,7 +15,7 @@ class ApiCaseRunner(CaseRunner):
         response = None
         url = self.case.case_body["url"]
         headers = self.case.case_body["headers"]
-        params = self.case.case_body["params"]
+        params = json.dumps(self.case.case_body["params"])
         if self.case.case_body["method"] == "get":
             response = requests.get(url=url, data=params, headers=headers)
         elif self.case.case_body["method"] == "post":

@@ -1,0 +1,33 @@
+- autodeploy_build:
+    url: http://plus.sankuai.com/ci/release/38977/template/257367/build
+    method: post
+    headers:
+      Authorization: "MWS user@meituan.com:W1n0Qc6OXb76L9e/nyn1cr1YzeY="
+      Date: "Fri, 21 Jun 2019 03:20:05 GMT"
+      Content-Type: "application/json"
+    params:
+      Label: master
+    expect:
+      - status_code: 200
+
+# - autodeploy_deploy
+
+# - codex_java_build
+
+# - codex_java_deploy
+
+# - vm_deploy
+
+# - 灰度
+
+- maven_deploy:
+    url: http://plus.sankuai.com/ci/release/39089/template/258402/deploy
+    method: post
+    headers:
+      Authorization: "MWS user@meituan.com:WOc5t1QGlAH2IG58Hp3BayRUexE="
+      Date: "Fri, 21 Jun 2019 03:46:28 GMT"
+      Content-Type: "application/json"
+    params:
+      Label: "offline-deploy"
+    expect:
+      - status_code: 200

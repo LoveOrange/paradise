@@ -4,4 +4,4 @@ selenium:
     type: chrome
 
 case_files:
-  - api: "cases/maven.yml"
+  - api: "cases/cases.yml"
